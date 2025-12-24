@@ -1,14 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Navbar = () => {
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/projects">Projects</NavLink></li>
-        
+        <li><NavLink to="/admin">Admin</NavLink></li>
     </>
     return (
         <div>
-            <div className="px-2 md:px-52 navbar text-neutral-content shadow-sm inter-tight">
+            <div className="px-2 sm:px-6 md:px-20 lg:px-52 navbar text-neutral-content shadow-sm inter-tight">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -16,21 +16,21 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-[#0f172a] text-white border border-gray-700 rounded-box z-50 mt-3 w-52 p-2 shadow-lg">
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">
-                        <img className="w-6" src="/Alva logo.png" alt="" />LVA</a>
+                    <Link to="/" className="btn btn-ghost text-xl">
+                        <img className="w-6" src="/Alva logo.png" alt="" />LVA</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 gap-5 text-base">
+                    <ul className="menu menu-horizontal px-1 gap-3 sm:gap-5 text-base">
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end">
+                {/* <div className="navbar-end">
                     <a className="btn btn-accent">Get Started</a>
-                </div>
+                </div> */}
             </div>
         </div>
     );

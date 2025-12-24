@@ -85,9 +85,7 @@ const Clients = () => {
                         </div>
 
                         {/* CTA Button */}
-                        <button className="w-full sm:w-auto btn btn-accent px-6 py-3">
-                            Get Started
-                        </button>
+                        {/* Get Started button removed */}
                     </div>
                 </div>
             </div>

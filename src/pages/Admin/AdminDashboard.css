@@ -1,0 +1,73 @@
+.admin-dashboard {
+  max-width: 700px;
+  margin: 40px auto 0 auto;
+  background: rgba(20, 20, 30, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 32px #0008;
+  padding: 32px 24px 24px 24px;
+  color: #f3f3f3;
+}
+.admin-dashboard h1 {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+.admin-section {
+  margin-bottom: 36px;
+}
+.admin-section h2 {
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+  color: #00e6d8;
+}
+.admin-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.admin-form input {
+  background: #23243a;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 1rem;
+  outline: none;
+}
+.admin-form button {
+  background: #00e6d8;
+  color: #181a2a;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.admin-form button:hover {
+  background: #00bfae;
+}
+.admin-list {
+  list-style: none;
+  padding: 0;
+}
+.admin-list li {
+  background: #23243a;
+  margin-bottom: 8px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin-list-title {
+  font-weight: bold;
+  color: #fff;
+}
+.admin-list-desc {
+  color: #b0b0b0;
+  margin-left: 10px;
+  font-size: 0.98rem;
+}

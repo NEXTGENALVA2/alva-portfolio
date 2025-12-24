@@ -36,22 +36,7 @@ const services = [
         iconColor: "text-[#FFA07A]",
         hoverIconColor: "group-hover:text-[#00FFFF]"
     },
-    {
-        icon: PenTool,
-        title: "Portfolio & Design Conversion",
-        bgColor: "bg-[#1C2541]",
-        hoverBg: "hover:bg-gradient-to-r from-[#3A506B] to-[#5C6BC0]",
-        iconColor: "text-[#5BC0EB]",
-        hoverIconColor: "group-hover:text-[#FED766]"
-    },
-    {
-        icon: Cloud,
-        title: "Cloud & Deployment Services",
-        bgColor: "bg-[#2C5F2D]",
-        hoverBg: "hover:bg-gradient-to-r from-[#488A48] to-[#1C7C54]",
-        iconColor: "text-[#97BC62]",
-        hoverIconColor: "group-hover:text-[#F9ED69]"
-    }
+    // ...existing code...
 ];
 
 const ServiceCard = ({
@@ -115,26 +100,31 @@ const Services = () => {
                         and technology services. We deliver innovative solutions tailored to your unique needs.
                     </p>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {services.map((service, index) => (
-                        <ServiceCard
-                            key={index}
-                            icon={service.icon}
-                            title={service.title}
-                            details={[
-                                "Custom React, Vue, and Next.js applications",
-                                "Responsive and adaptive design",
-                                "State management with Redux/Context",
-                                "Performance optimization",
-                                "Cross-browser compatibility"
-                            ]}
-                            bgColor={service.bgColor}
-                            hoverBg={service.hoverBg}
-                            iconColor={service.iconColor}
-                            hoverIconColor={service.hoverIconColor}
-                        />
-                    ))}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {services.map((service, index) => {
+                        let details = [
+                            "Custom React, Vue, and Next.js applications",
+                            "Responsive and adaptive design",
+                            "State management with Redux/Context",
+                            "Performance optimization",
+                            "Cross-browser compatibility"
+                        ];
+                        if (service.title === "Portfolio & Design Conversion" || service.title === "Cloud & Deployment Services") {
+                            details = [];
+                        }
+                        return (
+                            <ServiceCard
+                                key={index}
+                                icon={service.icon}
+                                title={service.title}
+                                details={details}
+                                bgColor={service.bgColor}
+                                hoverBg={service.hoverBg}
+                                iconColor={service.iconColor}
+                                hoverIconColor={service.hoverIconColor}
+                            />
+                        );
+                    })}
                 </div>
             </div>
         </div>

@@ -5,17 +5,17 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="inter-tight footer footer-horizontal footer-center text-primary-content p-10">
-            <aside>
-                <img className="w-16" src="/Alva logo.png" alt="" />
-                <h2 className="font-bold text-base">Nextgen ALVA</h2>
-                <p className="font-bold">
+        <footer className="inter-tight footer footer-horizontal footer-center text-primary-content p-6 sm:p-10">
+            <aside className="flex flex-col items-center gap-2">
+                <img className="w-12 sm:w-16" src="/Alva logo.png" alt="" />
+                <h2 className="font-bold text-base sm:text-lg">Nextgen ALVA</h2>
+                <p className="font-bold text-xs sm:text-base">
                     Turning Vision into Reality
                 </p>
-                <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
+                <p className="text-xs sm:text-base">Copyright  {new Date().getFullYear()} - All right reserved</p>
             </aside>
             <nav>
-                <div className="grid grid-flow-col gap-4">
+                <div className="grid grid-flow-col gap-2 sm:gap-4">
                     <Link className="hover:text-red-600" to="https://www.youtube.com/@NextGenAlva">
                         <FaYoutube className="text-2xl" />
                     </Link>

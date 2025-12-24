@@ -20,7 +20,15 @@ const Banner = () => {
                             From frontend to full-stack, we bring your ideas to life.
                         </p>
                         <div className="mt-8 flex flex-wrap justify-center gap-4">
-                            <button className="btn btn-accent px-6">Get Started</button>
+                            {/* Get Started button added */}
+                            <a
+                                href="https://www.fiverr.com/nextgen_alva?public_mode=true"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-success btn-outline px-4 flex items-center gap-2"
+                            >
+                                Get Started
+                            </a>
                             <button
                                 onClick={() => setIsOpen(true)}
                                 className="btn btn-accent btn-outline px-4 flex items-center gap-2"

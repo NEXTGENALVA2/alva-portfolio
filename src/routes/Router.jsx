@@ -7,6 +7,7 @@ import Home from "../pages/Home/Home";
 import Projects from "../pages/Projects/Projects";
 import About from "../pages/About/About";
 import Services from "../pages/Services/Services";
+import AdminDashboard from "../pages/Admin/AdminDashboard";
 
 export const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>
+            },
+            {
+                path: '/admin',
+                element: <AdminDashboard />
             },
         ]
     },

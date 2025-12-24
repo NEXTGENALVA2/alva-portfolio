@@ -6,7 +6,7 @@ const ProjectCard = ({ title, description, image, tags, liveLink, githubLink }) 
 
     return (
         <div
-            className="group relative bg-white rounded-xl overflow-hidden shadow-lg h-[400px] transition-all duration-300 hover:shadow-xl"
+            className="group relative bg-white rounded-xl overflow-hidden shadow-lg min-h-[260px] sm:min-h-[320px] md:min-h-[360px] lg:min-h-[400px] transition-all duration-300 hover:shadow-xl w-full"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -75,46 +75,32 @@ const ProjectCard = ({ title, description, image, tags, liveLink, githubLink }) 
     );
 };
 
+
+import { useEffect } from 'react';
+
 const Projects = () => {
-    const projects = [
-        {
-            title: "Gadget Heaven",
-            description: "A sleek platform to discover, compare, and manage the latest gadgets, making tech shopping effortless and enjoyable.",
-            image: "https://i.ibb.co.com/k65qXRV/Gadget-Heaven-Mockup.png",
-            tags: ["React", "Firebase", "TailwindCSS", "JavaScript"],
-            liveLink: "https://gadget-heaven-1.web.app/",
-            githubLink: "https://github.com/nextgenalva/Gadget-Heaven"
-        },
-        {
-            title: "Tech Hunt",
-            description: "A comprehensive admin dashboard for managing products, orders, customers and analyzing sales data with interactive charts.",
-            image: "https://i.ibb.co.com/fCgB2ny/Tech-Hunt.png",
-            tags: ["ReactJS", "TailwindCSS", "MongoDB","Firebase", "ExpressJS", "NodeJS","Stripe"],
-            liveLink: "https://tech-hunt-39126.web.app/",
-            githubLink: "https://github.com/nextgenalva/Tech-Hunt-Client"
-        },
-        {
-            title: "Antiqo",
-            description: "Explore artifacts, add your discoveries, share insights, and become part of preserving human heritage.",
-            image: "https://i.ibb.co.com/pz3bhz0/Antiqo.png",
-            tags: ["ReactJS", "TailwindCSS", "MongoDB","Firebase", "ExpressJS", "NodeJS"],
-            liveLink: "https://antiqo-tracker.web.app/",
-            githubLink: "https://github.com/nextgenalva/Antiqo-Client"
-        },
-        {
-            title: "EZ Visa",
-            description: "Simplified visa exploration, applications, and tracking with a dynamic, responsive platform.",
-            image: "https://i.ibb.co.com/b6WmgS1/EZVisa.png",
-            tags: ["ReactJS", "TailwindCSS", "MongoDB","Firebase", "ExpressJS", "NodeJS"],
-            liveLink: "https://ez-visa-1.web.app/",
-            githubLink: "https://github.com/nextgenalva/EZ-Visa"
-        },
-    ];
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        fetch('/api/projects')
+            .then(res => res.json())
+            .then(data => {
+                // Map backend fields to ProjectCard props
+                setProjects(data.map(p => ({
+                    title: p.title,
+                    description: p.description,
+                    image: p.imageUrl,
+                    tags: [], // You can add tags field in backend if needed
+                    liveLink: p.liveSite,
+                    githubLink: p.code
+                })));
+            });
+    }, []);
 
     return (
         <section className="inter-tight w-full bg-gradient-to-b from-white to-amber-50/30">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                <div className="flex flex-col items-center space-y-12">
+            <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-10 sm:py-16 lg:py-20">
+                <div className="flex flex-col items-center space-y-8 sm:space-y-12">
                     {/* Header */}
                     <div className="text-center max-w-3xl mx-auto">
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
@@ -126,7 +112,7 @@ const Projects = () => {
                     </div>
 
                     {/* Projects Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 w-full">
                         {projects.map((project, index) => (
                             <ProjectCard key={index} {...project} />
                         ))}
