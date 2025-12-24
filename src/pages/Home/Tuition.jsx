@@ -64,10 +64,11 @@ const Tuition = () => {
                         </span>
                     </p>
                 </div>
-                {/* 4 Service Grid (restored, only this section remains) */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                    {/* Tuition Service */}
-                    <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700 shadow-lg flex flex-col justify-between">
+                {/* 3 Service Grid, centered and responsive */}
+                <div className="flex justify-center mb-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
+                        {/* Tuition Service */}
+                        <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700 shadow-lg flex flex-col justify-between">
                         <h2 className="text-xl font-bold mb-2 text-purple-400">Tuition Service</h2>
                         <ul className="text-gray-300 mb-4 list-disc list-inside space-y-1">
                             <li>Web development (frontend & backend)</li>
@@ -78,20 +79,28 @@ const Tuition = () => {
                         </ul>
                         <a href="https://www.fiverr.com/nextgen_alva/teach-you-html-tailwindcss-javascript-react-from-scratch?context_referrer=seller_page&ref_ctx_id=bee96d39da8a4aa19e925ec3a4c677e2&pckg_id=1&pos=1&imp_id=58366c8e-9aba-4a0d-92a7-9d9962dd43ef" target="_blank" rel="noopener noreferrer" className="mt-auto btn btn-accent w-full">Get Tuition</a>
                     </div>
-                    {/* Portfolio Making */}
-                    <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700 shadow-lg flex flex-col justify-between">
-                        <h2 className="text-xl font-bold mb-2 text-amber-400">Portfolio Making</h2>
+                        {/* Combined Portfolio & Full Stack */}
+                        <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700 shadow-lg flex flex-col justify-between">
+                        <h2 className="text-xl font-bold mb-2 text-gradient bg-gradient-to-r from-amber-400 via-blue-400 to-blue-600 bg-clip-text text-transparent">Portfolio & Full Stack Website/Software</h2>
                         <ul className="text-gray-300 mb-4 list-disc list-inside space-y-1">
                             <li>Professional portfolio design</li>
                             <li>Development for students & freelancers</li>
                             <li>Modern, responsive layouts</li>
                             <li>SEO optimized</li>
                             <li>Showcase your skills online</li>
+                            <li className="mt-2 border-t border-gray-700 pt-2">E-commerce solutions</li>
+                            <li>Education websites</li>
+                            <li>Custom company software</li>
+                            <li>Modern tech stack</li>
+                            <li>Scalable & secure delivery</li>
                         </ul>
-                        <a href="https://www.fiverr.com/nextgen_alva/create-professional-portfolio-website?context_referrer=seller_page&ref_ctx_id=bee96d39da8a4aa19e925ec3a4c677e2&pckg_id=1&pos=2&imp_id=665b6eec-b8f0-4b93-ae48-ee8042c4f746" target="_blank" rel="noopener noreferrer" className="mt-auto btn btn-accent w-full">Get Portfolio</a>
+                        <div className="flex flex-col gap-2">
+                            <a href="https://www.fiverr.com/nextgen_alva/create-professional-portfolio-website?context_referrer=seller_page&ref_ctx_id=bee96d39da8a4aa19e925ec3a4c677e2&pckg_id=1&pos=2&imp_id=665b6eec-b8f0-4b93-ae48-ee8042c4f746" target="_blank" rel="noopener noreferrer" className="btn btn-accent w-full">Get Portfolio</a>
+                            <a href="https://www.fiverr.com/nextgen_alva?public_mode=true" target="_blank" rel="noopener noreferrer" className="btn btn-accent w-full">Get Website/Software</a>
+                        </div>
                     </div>
-                    {/* Ads Service */}
-                    <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700 shadow-lg flex flex-col justify-between">
+                        {/* Ads Service */}
+                        <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700 shadow-lg flex flex-col justify-between">
                         <h2 className="text-xl font-bold mb-2 text-green-400">Ads Service</h2>
                         <ul className="text-gray-300 mb-4 list-disc list-inside space-y-1">
                             <li>Google Ads campaign setup</li>
@@ -102,17 +111,6 @@ const Tuition = () => {
                         </ul>
                         <a href="https://www.fiverr.com/nextgen_alva/meta-ads-instagram-ads-tiktok-ads-and-google-ads-expert?context_referrer=seller_page&ref_ctx_id=bee96d39da8a4aa19e925ec3a4c677e2&pckg_id=1&pos=3&imp_id=a2505ee7-ef52-4f43-80a2-1fe1940d1866" target="_blank" rel="noopener noreferrer" className="mt-auto btn btn-accent w-full">Get Ads Service</a>
                     </div>
-                    {/* Full Stack Website/Software */}
-                    <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700 shadow-lg flex flex-col justify-between">
-                        <h2 className="text-xl font-bold mb-2 text-blue-400">Full Stack Website/Software</h2>
-                        <ul className="text-gray-300 mb-4 list-disc list-inside space-y-1">
-                            <li>E-commerce solutions</li>
-                            <li>Education websites</li>
-                            <li>Custom company software</li>
-                            <li>Modern tech stack</li>
-                            <li>Scalable & secure delivery</li>
-                        </ul>
-                        <a href="https://www.fiverr.com/nextgen_alva?public_mode=true" target="_blank" rel="noopener noreferrer" className="mt-auto btn btn-accent w-full">Get Website/Software</a>
                     </div>
                 </div>
 
