@@ -8,6 +8,7 @@ const ProjectManager = () => {
   const [form, setForm] = useState({ title: '', description: '', imageUrl: '', liveSite: '', code: '' });
   const [uploading, setUploading] = useState(false);
   const [editingId, setEditingId] = useState(null);
+  const [uploadedFileName, setUploadedFileName] = useState('');
 
   useEffect(() => {
     fetch(API)
@@ -23,11 +24,10 @@ const ProjectManager = () => {
   const handleImageUpload = async e => {
     const file = e.target.files[0];
     if (!file) return;
-    
+    setUploadedFileName(file.name);
     setUploading(true);
     const formData = new FormData();
     formData.append('image', file);
-    
     try {
       const res = await fetch(UPLOAD_API, {
         method: 'POST',
@@ -35,8 +35,38 @@ const ProjectManager = () => {
       });
       const data = await res.json();
       if (data.url) {
-        setForm({ ...form, imageUrl: data.url });
+        // Update form state with new image URL
+        const updatedForm = { ...form, imageUrl: data.url };
+        setForm(updatedForm);
         alert('Image uploaded successfully!');
+        // Auto-save project after image upload
+        if (editingId) {
+          // Update existing project
+          const updateRes = await fetch(`${API}/${editingId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatedForm)
+          });
+          if (updateRes.ok) {
+            const updatedProject = await updateRes.json();
+            setProjects(projects.map(p => p._id === editingId ? updatedProject : p));
+            alert('Project updated with new image!');
+          }
+        } else if (updatedForm.title) {
+          // Add new project only if title is present
+          const addRes = await fetch(API, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatedForm)
+          });
+          if (addRes.ok) {
+            const newProject = await addRes.json();
+            setProjects([newProject, ...projects]);
+            setForm({ title: '', description: '', imageUrl: '', liveSite: '', code: '' });
+            setUploadedFileName('');
+            alert('Project added with image!');
+          }
+        }
       }
     } catch (err) {
       alert('Image upload failed: ' + err.message);
@@ -117,7 +147,14 @@ const ProjectManager = () => {
           <label style={{color: '#00e6d8', fontSize: '0.9rem'}}>Upload Thumbnail Image:</label>
           <input type="file" accept="image/*" onChange={handleImageUpload} disabled={uploading} />
           {uploading && <span style={{color: '#00e6d8'}}>Uploading...</span>}
-          {form.imageUrl && <span style={{color: '#4ade80', fontSize: '0.85rem'}}>✓ Image uploaded</span>}
+          {uploadedFileName && <span style={{color: '#eab308', fontSize: '0.85rem'}}>File: {uploadedFileName}</span>}
+          {form.imageUrl && (
+            <span style={{color: '#4ade80', fontSize: '0.85rem'}}>
+              ✓ Image uploaded
+              <br />
+              <img src={form.imageUrl} alt="Uploaded thumbnail" style={{maxWidth: 120, maxHeight: 80, marginTop: 4, borderRadius: 4, border: '1px solid #333'}} />
+            </span>
+          )}
         </div>
         
         <div style={{display: 'flex', gap: 10}}>
