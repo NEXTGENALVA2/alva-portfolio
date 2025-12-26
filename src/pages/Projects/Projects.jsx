@@ -76,7 +76,7 @@ const ProjectCard = ({ title, description, image, tags, liveLink, githubLink }) 
 };
 
 
-import { useEffect } from 'react';
+
 
 
 const Projects = () => {
