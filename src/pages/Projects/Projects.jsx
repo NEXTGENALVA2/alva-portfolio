@@ -1,5 +1,5 @@
-import { Github, ExternalLink } from 'lucide-react';
-import { useState } from 'react';
+import { Github, ExternalLink, Loader2 } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const ProjectCard = ({ title, description, image, tags, liveLink, githubLink }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -78,27 +78,29 @@ const ProjectCard = ({ title, description, image, tags, liveLink, githubLink }) 
 
 import { useEffect } from 'react';
 
+
 const Projects = () => {
     const [projects, setProjects] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch('https://alva-portfolio.onrender.com/api/projects')
             .then(res => res.json())
             .then(data => {
-                // Map backend fields to ProjectCard props
                 setProjects(data.map(p => ({
                     title: p.title,
                     description: p.description,
                     image: p.imageUrl,
-                    tags: [], // You can add tags field in backend if needed
+                    tags: [],
                     liveLink: p.liveSite,
                     githubLink: p.code
                 })));
-            });
+            })
+            .finally(() => setLoading(false));
     }, []);
 
     return (
-        <section className="inter-tight w-full bg-gradient-to-b from-white to-amber-50/30">
+        <section className="inter-tight w-full bg-gradient-to-b from-white to-amber-50/30 min-h-[60vh]">
             <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 py-10 sm:py-16 lg:py-20">
                 <div className="flex flex-col items-center space-y-8 sm:space-y-12">
                     {/* Header */}
@@ -111,12 +113,19 @@ const Projects = () => {
                         </p>
                     </div>
 
-                    {/* Projects Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 w-full">
-                        {projects.map((project, index) => (
-                            <ProjectCard key={index} {...project} />
-                        ))}
-                    </div>
+                    {/* Loading Spinner */}
+                    {loading ? (
+                        <div className="flex flex-col items-center justify-center min-h-[200px]">
+                            <Loader2 className="animate-spin w-12 h-12 text-amber-500 mb-4" />
+                            <span className="text-lg text-amber-600 font-medium">Loading projects...</span>
+                        </div>
+                    ) : (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 w-full">
+                            {projects.map((project, index) => (
+                                <ProjectCard key={index} {...project} />
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
         </section>
