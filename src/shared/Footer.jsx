@@ -19,19 +19,20 @@ const Footer = () => {
                     <Link className="hover:text-red-600" to="https://www.youtube.com/@NextGenAlva">
                         <FaYoutube className="text-2xl" />
                     </Link>
-                    <Link className="hover:text-slate-500" to="https://github.com/nextgenalva">
-                        <Github />
-                    </Link>
-                    <Link className="hover:text-green-400" to="https://wa.me/+8801829812289?text=Hello%20there!%20I%20would%20like%20to%20discuss%20about%20a%20Project.">
+                    {/* WhatsApp */}
+                    <Link className="hover:text-green-400" to="https://wa.me/+8801873785288?text=Hello%20there!%20I%20would%20like%20to%20discuss%20about%20a%20Project.">
                         <FaWhatsapp className="text-2xl" />
                     </Link>
-                    <Link className="hover:text-blue-500" to="https://www.facebook.com/people/Alva-Gen/61570221325782/">
+                    {/* Facebook */}
+                    <Link className="hover:text-blue-500" to="https://www.facebook.com/profile.php?id=61584324897604">
                         <FaFacebookF className="text-xl" />
                     </Link>
-                    <Link className="hover:text-gray-600" to="https://x.com/NextGenAlva">
+                    {/* Twitter/X */}
+                    <Link className="hover:text-gray-600" to="https://x.com/Next_Gen_Alva">
                         <FaXTwitter className="text-2xl" />
                     </Link>
-                    <Link className="hover:text-pink-500" to="https://www.instagram.com/nextgenalva/">
+                    {/* Instagram */}
+                    <Link className="hover:text-pink-500" to="https://www.instagram.com/nextgen.alva/">
                         <Instagram />
                     </Link>
                     <Link className="hover:text-blue-400" to="mailto:nextgen.alva@gmail.com">
