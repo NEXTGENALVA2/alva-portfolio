@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-const API = '/api/projects';
-const UPLOAD_API = '/api/upload';
+const API = 'https://alva-portfolio.onrender.com/api/projects';
+const UPLOAD_API = 'https://alva-portfolio.onrender.com/api/upload';
 
 const ProjectManager = () => {
   const [projects, setProjects] = useState([]);
