@@ -82,7 +82,7 @@ const Projects = () => {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        fetch('/api/projects')
+        fetch('https://alva-portfolio.onrender.com/api/projects')
             .then(res => res.json())
             .then(data => {
                 // Map backend fields to ProjectCard props
