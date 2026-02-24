@@ -84,7 +84,7 @@ const Projects = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://alva-portfolio.onrender.com/api/projects')
+        fetch('http://localhost:5000/api/projects')
             .then(res => res.json())
             .then(data => {
                 setProjects(data.map(p => ({
