@@ -84,7 +84,8 @@ const Projects = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/projects')
+        const API = (import.meta.env.VITE_API_URL || 'http://localhost:5000/api') + '/projects';
+        fetch(API)
             .then(res => res.json())
             .then(data => {
                 setProjects(data.map(p => ({
