@@ -84,7 +84,8 @@ const Projects = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const API = (import.meta.env.VITE_API_URL || 'http://localhost:5000/api') + '/projects';
+        const apiBase = import.meta.env.VITE_API_URL;
+        const API = `${apiBase}/api/projects`;
         fetch(API)
             .then(res => res.json())
             .then(data => {
