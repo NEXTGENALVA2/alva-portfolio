@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-const API = '/api/courses';
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API = `${API_BASE}/courses`;
 
 const CourseManager = () => {
   const [courses, setCourses] = useState([]);
