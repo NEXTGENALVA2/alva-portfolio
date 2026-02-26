@@ -20,7 +20,7 @@ const Footer = () => {
                         <FaYoutube className="text-2xl" />
                     </Link>
                     {/* WhatsApp */}
-                    <Link className="hover:text-green-400" to="https://wa.me/+8801873785288?text=Hello%20there!%20I%20would%20like%20to%20discuss%20about%20a%20Project.">
+                    <Link className="hover:text-green-400" to="https://wa.me/+8801964485930?text=Hello%20there!%20I%20would%20like%20to%20discuss%20about%20a%20Project.">
                         <FaWhatsapp className="text-2xl" />
                     </Link>
                     {/* Facebook */}
