@@ -153,7 +153,7 @@ const MemberCard = ({ name, role, bio, socials, image, details }) => {
                                                     <div key={index} className="bg-white/5 p-4 rounded-lg border border-white/10 hover:border-white/20 transition-all">
                                                         <h5 className="font-bold text-white">{project.name}</h5>
                                                         <p className="text-sm text-gray-300 mt-2">{project.description}</p>
-                                                        {project.link && (
+                                                        {/* project.link && (
                                                             <a
                                                                 href={project.link}
                                                                 target="_blank"
@@ -162,7 +162,7 @@ const MemberCard = ({ name, role, bio, socials, image, details }) => {
                                                             >
                                                                 View Project →
                                                             </a>
-                                                        )}
+                                                        ) */} 
                                                     </div>
                                                 ))}
                                             </div>
@@ -180,7 +180,7 @@ const MemberCard = ({ name, role, bio, socials, image, details }) => {
                             >
                                 Close
                             </button>
-                            {socials.portfolio && (
+                            {/* socials.portfolio && (
                                 <a
                                     href={socials.portfolio}
                                     target="_blank"
@@ -189,7 +189,7 @@ const MemberCard = ({ name, role, bio, socials, image, details }) => {
                                 >
                                     View Portfolio
                                 </a>
-                            )}
+                            ) */}
                         </div>
                     </div>
                 </div>

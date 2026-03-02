@@ -21,7 +21,21 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/projects',
-                element: <Projects></Projects>
+                element: <Projects></Projects>,
+                loader: async () => {
+                    const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+                    const res = await fetch(`${apiBase}/projects`);
+                    const raw = await res.json();
+                    // convert to shape the page expects
+                    return raw.map(p => ({
+                        title: p.title,
+                        description: p.description,
+                        image: p.imageUrl,
+                        tags: [],
+                        liveLink: p.liveSite,
+                        githubLink: p.code
+                    }));
+                }
             },
             {
                 path: '/about',

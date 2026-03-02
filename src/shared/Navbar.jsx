@@ -3,7 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 const Navbar = () => {
     const links = <>
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/projects">Projects</NavLink></li>
+        <li><NavLink to="/projects" prefetch="intent">Projects</NavLink></li>
         <li><NavLink to="/admin">Admin</NavLink></li>
     </>
     return (
