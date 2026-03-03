@@ -4,14 +4,14 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const GapAnimation = () => {
   return (
-    <div className="py-16 flex justify-center items-center">
-      <div className="w-full max-w-2xl">
+    <div className="py-8 sm:py-12 lg:py-16 flex justify-center items-center">
+      <div className="w-full max-w-2xl px-4 sm:px-0">
         <DotLottieReact
           src="https://lottie.host/42ae4800-38e6-4a8b-bccb-c1f7a1c45232/IPkyHDJTJX.lottie"
           loop
           autoplay
           speed={0.8}
-          style={{ width: "100%", height: "auto", minHeight: "400px" }}
+          style={{ width: "100%", height: "auto", minHeight: "250px", maxHeight: "400px" }}
         />
       </div>
     </div>
