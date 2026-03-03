@@ -81,41 +81,17 @@ const ProjectCard = ({ title, description, image, tags, liveLink, githubLink }) 
 
 
 const Projects = () => {
-    // data provided by the router loader (prefetched when link is hovered or navigation starts)
+    // data provided by the router loader (prefetched on app start)
     const loaderProjects = useLoaderData();
     const [projects, setProjects] = useState(loaderProjects || []);
     const [loading, setLoading] = useState(!loaderProjects || loaderProjects.length === 0);
 
-    // if for some reason loader data arrives later, update state
     useEffect(() => {
         if (loaderProjects && loaderProjects.length) {
             setProjects(loaderProjects);
             setLoading(false);
         }
     }, [loaderProjects]);
-
-    // (optional) could still refetch on mount if you want a client-side refresh
-    /*
-    useEffect(() => {
-        if (!projects.length) {
-            const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-            const API = `${apiBase}/projects`;
-            fetch(API)
-                .then(res => res.json())
-                .then(data => {
-                    setProjects(data.map(p => ({
-                        title: p.title,
-                        description: p.description,
-                        image: p.imageUrl,
-                        tags: [],
-                        liveLink: p.liveSite,
-                        githubLink: p.code
-                    })));
-                })
-                .finally(() => setLoading(false));
-        }
-    }, []);
-    */
 
     return (
         <section className="inter-tight w-full bg-gradient-to-b from-white to-amber-50/30 min-h-[60vh]">

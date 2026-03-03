@@ -8,45 +8,36 @@ import Projects from "../pages/Projects/Projects";
 import About from "../pages/About/About";
 import Services from "../pages/Services/Services";
 import AdminDashboard from "../pages/Admin/AdminDashboard";
+import { fetchAndCacheProjects } from "../lib/cache";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <MainLayout></MainLayout>,
-        errorElement: <Error></Error>,
+        element: <MainLayout />,
+        errorElement: <Error />,
         children: [
+            // index route renders at exactly '/'
             {
-                path: '/',
-                element: <Home></Home>
+                index: true,
+                element: <Home />
             },
             {
-                path: '/projects',
-                element: <Projects></Projects>,
+                path: 'projects',
+                element: <Projects />,
                 loader: async () => {
-                    const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-                    const res = await fetch(`${apiBase}/projects`);
-                    const raw = await res.json();
-                    // convert to shape the page expects
-                    return raw.map(p => ({
-                        title: p.title,
-                        description: p.description,
-                        image: p.imageUrl,
-                        tags: [],
-                        liveLink: p.liveSite,
-                        githubLink: p.code
-                    }));
+                    return await fetchAndCacheProjects();
                 }
             },
             {
-                path: '/about',
-                element: <About></About>
+                path: 'about',
+                element: <About />
             },
             {
-                path: '/services',
-                element: <Services></Services>
+                path: 'services',
+                element: <Services />
             },
             {
-                path: '/admin',
+                path: 'admin',
                 element: <AdminDashboard />
             },
         ]

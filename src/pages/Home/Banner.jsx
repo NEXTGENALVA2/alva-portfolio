@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { FaPlayCircle } from "react-icons/fa";
-import banner from "../../../public/banner.json";
-import Lottie from "lottie-react";
+// Animation removed since we're hiding first one and no replacement needed
+
 
 const Banner = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <section className="w-full text-white min-h-screen">
-            <div className="inter-tight max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                <div className="flex flex-col items-center space-y-12">
+        <section className="w-full text-white">
+            <div className="inter-tight max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div className="flex flex-col items-center space-y-8">
                     {/* Text Content */}
                     <div className="text-center max-w-3xl mx-auto">
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
@@ -39,10 +39,8 @@ const Banner = () => {
                         </div>
                     </div>
 
-                    {/* Animation Container */}
-                    <div className="relative rounded-lg overflow-hidden shadow-xl">
-                        <Lottie className="w-[300px] md:w-[600px]" animationData={banner} loop={true} />
-                    </div>
+
+
                 </div>
             </div>
 

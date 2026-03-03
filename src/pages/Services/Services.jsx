@@ -1,42 +1,61 @@
 import React from 'react';
 import {
-    Check, Server, Layout, Database, Cloud, BookOpen, PenTool
+    Check, Server, Layout, Database, Cloud, BookOpen
 } from 'lucide-react';
 
 const services = [
     {
         icon: Layout,
         title: "Frontend Web Development",
-        bgColor: "bg-[#1A1A2E]",
-        hoverBg: "hover:bg-gradient-to-r from-[#16213E] to-[#0F3460]",
-        iconColor: "text-[#E94560]",
-        hoverIconColor: "group-hover:text-[#00FFD1]"
+        bgColor: "bg-gradient-to-br from-red-900 to-red-800",
+        iconColor: "text-red-400",
+        details: [
+            "Custom React, Vue, and Next.js applications",
+            "Responsive and adaptive design",
+            "State management with Redux/Context",
+            "Performance optimization",
+            "Cross-browser compatibility"
+        ]
     },
     {
         icon: Server,
-        title: "Backend & API Development  ",
-        bgColor: "bg-[#2C003E]",
-        hoverBg: "hover:bg-gradient-to-r from-[#510A32] to-[#810034]",
-        iconColor: "text-[#FF6B6B]",
-        hoverIconColor: "group-hover:text-[#4ECDC4]"
+        title: "Backend & API Development",
+        bgColor: "bg-gradient-to-br from-purple-900 to-purple-800",
+        iconColor: "text-purple-400",
+        details: [
+            "Custom React, Vue, and Next.js applications",
+            "Responsive and adaptive design",
+            "State management with Redux/Context",
+            "Performance optimization",
+            "Cross-browser compatibility"
+        ]
     },
     {
         icon: Database,
         title: "Database Architecture",
-        bgColor: "bg-[#1B1B3A]",
-        hoverBg: "hover:bg-gradient-to-r from-[#4A4E69] to-[#22223B]",
-        iconColor: "text-[#9D4EDD]",
-        hoverIconColor: "group-hover:text-[#E0FF4F]"
+        bgColor: "bg-gradient-to-br from-purple-900 to-indigo-900",
+        iconColor: "text-purple-400",
+        details: [
+            "Custom React, Vue, and Next.js applications",
+            "Responsive and adaptive design",
+            "State management with Redux/Context",
+            "Performance optimization",
+            "Cross-browser compatibility"
+        ]
     },
     {
         icon: BookOpen,
         title: "Web Development Tutoring",
-        bgColor: "bg-[#2D1B69]",
-        hoverBg: "hover:bg-gradient-to-r from-[#3D1078] to-[#6A0572]",
-        iconColor: "text-[#FFA07A]",
-        hoverIconColor: "group-hover:text-[#00FFFF]"
-    },
-    // ...existing code...
+        bgColor: "bg-gradient-to-br from-purple-900 to-purple-700",
+        iconColor: "text-orange-400",
+        details: [
+            "Custom React, Vue, and Next.js applications",
+            "Responsive and adaptive design",
+            "State management with Redux/Context",
+            "Performance optimization",
+            "Cross-browser compatibility"
+        ]
+    }
 ];
 
 const ServiceCard = ({
@@ -44,14 +63,12 @@ const ServiceCard = ({
     title,
     details,
     bgColor,
-    hoverBg,
-    iconColor,
-    hoverIconColor
+    iconColor
 }) => (
     <div className={`cursor-pointer inter-tight
     relative group overflow-hidden rounded-2xl p-6 
-    ${bgColor} ${hoverBg}
-    border border-gray-800 
+    ${bgColor}
+    border border-gray-700 
     transition-all duration-500 
     transform hover:-translate-y-3 
     hover:shadow-2xl
@@ -60,11 +77,10 @@ const ServiceCard = ({
         <div className="flex items-center mb-4">
             <Icon className={`
         w-10 h-10 mr-4 
-        ${iconColor} 
-        ${hoverIconColor}
+        ${iconColor}
         transition-colors duration-300
       `} />
-            <h3 className="text-xl font-bold text-white group-hover:text-gray-100">
+            <h3 className="text-xl font-bold text-white">
                 {title}
             </h3>
         </div>
@@ -78,7 +94,7 @@ const ServiceCard = ({
                     <Check
                         className="w-5 h-5 mr-2 text-green-400 flex-shrink-0"
                     />
-                    <span className="group-hover:text-gray-50 transition-colors">
+                    <span>
                         {detail}
                     </span>
                 </li>
@@ -101,34 +117,21 @@ const Services = () => {
                     </p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {services.map((service, index) => {
-                        let details = [
-                            "Custom React, Vue, and Next.js applications",
-                            "Responsive and adaptive design",
-                            "State management with Redux/Context",
-                            "Performance optimization",
-                            "Cross-browser compatibility"
-                        ];
-                        if (service.title === "Portfolio & Design Conversion" || service.title === "Cloud & Deployment Services") {
-                            details = [];
-                        }
-                        return (
-                            <ServiceCard
-                                key={index}
-                                icon={service.icon}
-                                title={service.title}
-                                details={details}
-                                bgColor={service.bgColor}
-                                hoverBg={service.hoverBg}
-                                iconColor={service.iconColor}
-                                hoverIconColor={service.hoverIconColor}
-                            />
-                        );
-                    })}
+                    {services.map((service, index) => (
+                        <ServiceCard
+                            key={index}
+                            icon={service.icon}
+                            title={service.title}
+                            details={service.details}
+                            bgColor={service.bgColor}
+                            iconColor={service.iconColor}
+                        />
+                    ))}
                 </div>
             </div>
         </div>
     );
 };
+
 
 export default Services;
