@@ -7,53 +7,53 @@ const services = [
     {
         icon: Layout,
         title: "Frontend Web Development",
-        bgColor: "bg-gradient-to-br from-red-900 to-red-800",
-        iconColor: "text-red-400",
+        bgColor: "bg-gradient-to-br from-sky-900 to-blue-800",
+        iconColor: "text-sky-300",
         details: [
-            "Custom React, Vue, and Next.js applications",
-            "Responsive and adaptive design",
-            "State management with Redux/Context",
-            "Performance optimization",
-            "Cross-browser compatibility"
+            "Custom React, Vue, and static marketing sites",
+            "Responsive, mobile-first UI design",
+            "Modern animations and accessibility",
+            "SEO-friendly landing pages",
+            "Fast loading, polished user experiences"
         ]
     },
     {
         icon: Server,
         title: "Backend & API Development",
-        bgColor: "bg-gradient-to-br from-purple-900 to-purple-800",
-        iconColor: "text-purple-400",
+        bgColor: "bg-gradient-to-br from-violet-900 to-purple-800",
+        iconColor: "text-violet-300",
         details: [
-            "Custom React, Vue, and Next.js applications",
-            "Responsive and adaptive design",
-            "State management with Redux/Context",
-            "Performance optimization",
-            "Cross-browser compatibility"
+            "Node.js, Express, and API integrations",
+            "Secure authentication and user flows",
+            "Payment gateway and database wiring",
+            "Custom backend logic for web apps",
+            "Reliable hosting-ready deployment setup"
         ]
     },
     {
         icon: Database,
         title: "Database Architecture",
-        bgColor: "bg-gradient-to-br from-purple-900 to-indigo-900",
-        iconColor: "text-purple-400",
+        bgColor: "bg-gradient-to-br from-emerald-900 to-teal-800",
+        iconColor: "text-emerald-300",
         details: [
-            "Custom React, Vue, and Next.js applications",
-            "Responsive and adaptive design",
-            "State management with Redux/Context",
-            "Performance optimization",
-            "Cross-browser compatibility"
+            "MongoDB, PostgreSQL, and cloud storage",
+            "Data modeling for scaling and speed",
+            "Optimized queries and backups",
+            "Secure user, product, and order data",
+            "Analytics-ready event capture"
         ]
     },
     {
         icon: BookOpen,
         title: "Web Development Tutoring",
-        bgColor: "bg-gradient-to-br from-purple-900 to-purple-700",
-        iconColor: "text-orange-400",
+        bgColor: "bg-gradient-to-br from-orange-900 to-red-800",
+        iconColor: "text-orange-300",
         details: [
-            "Custom React, Vue, and Next.js applications",
-            "Responsive and adaptive design",
-            "State management with Redux/Context",
-            "Performance optimization",
-            "Cross-browser compatibility"
+            "One-on-one coaching from project start",
+            "Project-based learning with real code",
+            "React, Tailwind, Node, and deployment",
+            "Resume-ready portfolio guidance",
+            "Support for freelancing and client work"
         ]
     }
 ];

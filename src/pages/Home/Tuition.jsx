@@ -66,7 +66,7 @@ const Tuition = () => {
                 </div>
                 {/* 3 Service Grid, centered and responsive */}
                 <div className="flex justify-center mb-16">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 w-full max-w-6xl">
                         {/* Tuition Service */}
                         <div className="bg-gray-800/50 rounded-2xl p-6 border border-gray-700 shadow-lg flex flex-col justify-between">
                         <h2 className="text-xl font-bold mb-2 text-purple-400">Tuition Service</h2>
@@ -110,6 +110,21 @@ const Tuition = () => {
                             <li>Business growth optimization</li>
                         </ul>
                         <a href="https://www.fiverr.com/nextgen_alva/meta-ads-instagram-ads-tiktok-ads-and-google-ads-expert?context_referrer=seller_page&ref_ctx_id=bee96d39da8a4aa19e925ec3a4c677e2&pckg_id=1&pos=3&imp_id=a2505ee7-ef52-4f43-80a2-1fe1940d1866" target="_blank" rel="noopener noreferrer" className="mt-auto btn btn-accent w-full">Get Ads Service</a>
+                    </div>
+                        {/* Brand Launch Package */}
+                        <div className="bg-gradient-to-br from-fuchsia-900 to-pink-800 rounded-2xl p-6 border border-pink-700 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <h2 className="text-xl font-bold mb-3 text-white">Brand Launch Package</h2>
+                            <p className="text-gray-200 mb-4">Start-to-end brand creation with web development, customer support setup, and ads management.</p>
+                            <ul className="text-gray-200 mb-4 list-disc list-inside space-y-1">
+                                <li>Custom branding and website launch</li>
+                                <li>Customer support workflow integration</li>
+                                <li>Google & Meta ads management</li>
+                                <li>Marketing-ready lead capture</li>
+                                <li>Ongoing support and growth strategy</li>
+                            </ul>
+                        </div>
+                        <a href="https://www.fiverr.com/s/m54gPZZ" target="_blank" rel="noopener noreferrer" className="mt-auto btn btn-white text-black w-full">Launch Brand</a>
                     </div>
                     </div>
                 </div>
